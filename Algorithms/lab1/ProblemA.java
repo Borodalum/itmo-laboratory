@@ -1,18 +1,16 @@
 import java.util.Scanner;
-
+import java.util.concurrent.ThreadLocalRandom;
 public class ProblemA {
-
-    public static void quickSort(int[] arr, int low, int high) {
-        if (low >= high) {
+    public static void quickSort(int[] arr, int left, int right) {
+        if (left >= right) {
             return;
         }
-        int qIndex = (low + high) / 2;
+        int qIndex = ThreadLocalRandom.current().nextInt(left, right + 1);
         int q = arr[qIndex];
-        int i = low;
-        int j = high;
+        int i = left, j = right;
         while (i <= j) {
-            while (arr[i] < q) {i++;}
-            while (arr[j] > q) {j--;}
+            while (arr[i] < q) { i++; }
+            while (arr[j] > q) { j--; }
             if (i <= j) {
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -21,9 +19,10 @@ public class ProblemA {
                 j--;
             }
         }
-        quickSort(arr, low, j);
-        quickSort(arr, i, high);
+        quickSort(arr, left, j);
+        quickSort(arr, i, right);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -31,13 +30,9 @@ public class ProblemA {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         } 
-        sc.close();
-        quickSort(arr, 0, n - 1);
+        quickSort(arr, 0, arr.length - 1);
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i]);
-            if (i < n - 1) {
-                System.out.print(" ");
-            }
-        }  
+            System.out.print(arr[i] + " ");
+        }
     }
 }
