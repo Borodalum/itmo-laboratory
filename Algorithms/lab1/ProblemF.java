@@ -18,8 +18,13 @@ public class ProblemF {
                 low = mid;
             }
         }
-        if (low != high)
-            return Math.abs(arr[high] - k) < Math.abs(arr[low] - k) ? high : low;
+        if (low != high) {
+            if (Math.abs(arr[high] - k) < Math.abs(arr[low] - k)) {
+                return high;
+            } else {
+                return low;
+            }
+        }
         return low;
     }
     public static void main(String[] args) {
