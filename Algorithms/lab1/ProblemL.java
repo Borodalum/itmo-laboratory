@@ -6,7 +6,7 @@ public class ProblemL {
         long k = sc.nextLong();
 
         long left = 1;
-        long right = (long)n *n + 1;
+        long right = (long)n*n + 1;
 
         while (left < right) {
             long mid = (left + right)/2;
