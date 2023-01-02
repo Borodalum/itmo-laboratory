@@ -1,8 +1,8 @@
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
-public class E {
+public class Eshka {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String n = sc.next();

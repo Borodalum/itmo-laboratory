@@ -1,3 +1,5 @@
+package lab1;
+
 import java.util.Scanner;
 public class A {
     public static int[][] compose(int[][] rel1, int[][] rel2) {
