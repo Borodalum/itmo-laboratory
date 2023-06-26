@@ -31,7 +31,6 @@ public class B {
         }
         if (stack.atTop()[1] > 2) {
             for (int i = 0; i < stack.atTop()[1]; i++) {
-                //stack.pop();
                 ans++;
             }
         }
